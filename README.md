@@ -23,8 +23,6 @@
 
 - npm run test
 
----
-
 #### Choix de Refactoring
 
 Expliquez vos décisions principales :
@@ -33,21 +31,21 @@ Expliquez vos décisions principales :
 
 ### Problèmes Identifiés dans le Legacy
 
-1. **[Nom du smell]** : [Description concise]
+1. BLOB : une classe ayant trop de responsabilités au sein du logiciel.
 
-   - Impact : [pourquoi c'était problématique]
+   - Impact : difficile à comprendre et à maintenir
 
-2. **[Autre smell]** : [Description]
-   - Impact : [...]
+2. Duplicated code : plusieurs fois le meme code
+   - Impact : redondance, difficile à comprendre et à maintenir
 
 ### Solutions Apportées
 
-1. **[Amélioration 1]** : [Ce que vous avez fait]
+1. **[Amélioration 1]** : diviser le gros fichier en plusieurs
 
-   - Justification : [pourquoi ce choix]
+   - Justification : Pour la conprehension et la maintenance future
 
-2. **[Amélioration 2]** : [Ce que vous avez fait]
-   - Justification : [...]
+2. **[Amélioration 2]** : Pas de changement
+   - Justification : l'exercice ne peut pas etre resolu sans ces differentes parties
 
 ### Architecture Choisie
 
@@ -59,10 +57,10 @@ Expliquez vos décisions principales :
 
 ### Exemples Concrets
 
-**Exemple 1 : [Nom du refactoring]**
+Exemple 1 : extractCSV
 
 - Problème : [code smell spécifique]
-- Solution : [approche retenue]
+- Solution : Retirer les try catch dans extractCsv car ils ne servent a rien
 
 **Exemple 2 : [Autre refactoring]**
 
@@ -77,7 +75,7 @@ Expliquez vos décisions principales :
 
 ### Compromis Assumés
 
-- [Compromis 1] : [justification]
+- Bugs intentionnels : Sans ces bugs intentionnels l'exercice ne peut pas etre resolu
 - [Compromis 2] : [justification]
 
 ### Pistes d'Amélioration Future
