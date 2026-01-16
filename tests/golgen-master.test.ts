@@ -2,8 +2,8 @@ import { execSync } from "child_process"
 import { existsSync, readFileSync, writeFileSync } from "fs"
 import { join } from "path"
 
-const legacyCode = "npm run legacy"
-const refactoCode = "npm run refacto"
+const legacyCode = "npm run legacy --silent"
+const refactoCode = "npm run refacto --silent"
 const legacyReport = join(__dirname, "../legacy/expected/report.txt")
 
 function run(cmd: string): string {

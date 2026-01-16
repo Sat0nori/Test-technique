@@ -232,8 +232,6 @@ function run(): string {
 		outputLines.push(`Total: ${total.toFixed(2)} ${currency}`)
 		outputLines.push(`Loyalty Points: ${Math.floor(pts)}`)
 		outputLines.push("")
-		outputLines.push(`Grand Total: ${grandTotal.toFixed(2)} EUR`)
-		outputLines.push(`Total Tax Collected: ${totalTaxCollected.toFixed(2)} EUR`)
 
 		// Export JSON en parallèle (side effect)
 		jsonData.push({
@@ -244,6 +242,8 @@ function run(): string {
 			loyalty_points: Math.floor(pts),
 		})
 	}
+	outputLines.push(`Grand Total: ${grandTotal.toFixed(2)} EUR`)
+	outputLines.push(`Total Tax Collected: ${totalTaxCollected.toFixed(2)} EUR`)
 
 	const result = outputLines.join("\n")
 
