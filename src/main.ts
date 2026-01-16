@@ -1,7 +1,6 @@
-import * as fs from "fs"
-import * as path from "path"
 import extractCsv from "./extractCsv"
 import discount from "./discount"
+import { JsonOutput } from "./JsonOutput"
 
 // Constantes globales mal organisées
 const TAX = 0.2
@@ -31,7 +30,6 @@ function run(): string {
 
 	// Génération du rapport (mélange calculs + formatage + I/O)
 	const outputLines: string[] = []
-	const jsonData: any[] = []
 	let grandTotal = 0.0
 	let totalTaxCollected = 0.0
 
@@ -185,14 +183,7 @@ function run(): string {
 		outputLines.push(`Loyalty Points: ${Math.floor(pts)}`)
 		outputLines.push("")
 
-		// Export JSON en parallèle (side effect)
-		jsonData.push({
-			customer_id: cid,
-			name: name,
-			total: total,
-			currency: currency,
-			loyalty_points: Math.floor(pts),
-		})
+		JsonOutput(cid, name, total, currency, pts)
 	}
 	outputLines.push(`Grand Total: ${grandTotal.toFixed(2)} EUR`)
 	outputLines.push(`Total Tax Collected: ${totalTaxCollected.toFixed(2)} EUR`)
@@ -201,10 +192,6 @@ function run(): string {
 
 	// Side effects: print + file write
 	console.log(result)
-
-	// Export JSON surprise
-	const outputPath = path.join(process.cwd(), "output.json")
-	fs.writeFileSync(outputPath, JSON.stringify(jsonData, null, 2))
 
 	return result
 }
