@@ -1,20 +1,16 @@
 import * as fs from "fs"
 import path from "path"
+import { Customer, Order, Product, Promotion, ShippingZone } from "./type"
 
 // Types minimaux (manque de typage propre)
-type Customer = any
-type Order = any
-type Product = any
-type ShippingZone = any
-type Promotion = any
 
 export default function extractCsv() {
 	const base = process.cwd()
-	const custPath = path.join(base, "data", "customers.csv")
-	const ordPath = path.join(base, "data", "orders.csv")
-	const prodPath = path.join(base, "data", "products.csv")
-	const shipPath = path.join(base, "data", "shipping_zones.csv")
-	const promoPath = path.join(base, "data", "promotions.csv")
+	const custPath = path.join(base, "legacy/data", "customers.csv")
+	const ordPath = path.join(base, "legacy/data", "orders.csv")
+	const prodPath = path.join(base, "legacy/data", "products.csv")
+	const shipPath = path.join(base, "legacy/data", "shipping_zones.csv")
+	const promoPath = path.join(base, "legacy/data", "promotions.csv")
 
 	// Lecture fichier customers (parsing mélangé avec logique)
 	const customers: Record<string, Customer> = {}
