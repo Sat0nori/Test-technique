@@ -3,7 +3,7 @@ import extractCsv from "./extractCsv"
 const { orders, products, promotions } = extractCsv()
 
 // Groupement par client (logique métier mélangée avec aggregation)
-export default function discount() {
+export default function discount(): Record<string, any> {
 	const totalsByCustomer: Record<string, any> = {}
 	for (const o of orders) {
 		const cid = o.customer_id

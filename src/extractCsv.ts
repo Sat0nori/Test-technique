@@ -2,9 +2,7 @@ import * as fs from "fs"
 import path from "path"
 import { Customer, Order, Product, Promotion, ShippingZone } from "./type"
 
-// Types minimaux (manque de typage propre)
-
-export default function extractCsv() {
+export default function extractCsv(): Record<any, any> {
 	const base = process.cwd()
 	const custPath = path.join(base, "legacy/data", "customers.csv")
 	const ordPath = path.join(base, "legacy/data", "orders.csv")

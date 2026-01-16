@@ -2,32 +2,28 @@
 
 ### Prérequis
 
-- [TypeScript] version X.X
+- [TypeScript] version 5.9
 - [npm] version 11.6.0
 
-### Commandes
+## Commandes
 
-## Installation des dépendances
+### Installation des dépendances
 
 - npm i
 
-### Exécution
+## Exécution
 
-## Exécuter le code refactoré
-
-# Commande pour lancer le code
+### Commande pour lancer le code
 
 - npm run refacto
 
-# Commande pour lancer le golden master
+## Commande pour lancer le golden master
 
 - npm run test
 
-#### Choix de Refactoring
+## Choix de Refactoring
 
 Expliquez vos décisions principales :
-
-## Choix de Refactoring
 
 ### Problèmes Identifiés dans le Legacy
 
@@ -61,10 +57,6 @@ Exemple 1 : extractCSV
 
 - Problème : [code smell spécifique]
 - Solution : Retirer les try catch dans extractCsv car ils ne servent a rien
-
-**Exemple 2 : [Autre refactoring]**
-
-- ...
 
 ## Limites et Améliorations Futures
 
