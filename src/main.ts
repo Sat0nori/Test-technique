@@ -9,21 +9,9 @@ const LOYALTY_RATIO = 0.01
 const HANDLING_FEE = 2.5
 const MAX_DISCOUNT = 200
 
-// Types minimaux (manque de typage propre)
-type Customer = any
-type Order = any
-type Product = any
-type ShippingZone = any
-type Promotion = any
-
 // Fonction principale qui fait TOUT
 function run(): string {
-	const allCsv = extractCsv()
-	const customers = allCsv.customers
-	const products = allCsv.products
-	const shippingZones = allCsv.shippingZones
-	const promotions = allCsv.promotions
-	const orders = allCsv.orders
+	const { customers, orders, shippingZones, products, promotions } = extractCsv()
 
 	// Calcul des points de fidélité (première duplication)
 	const loyaltyPoints: Record<string, number> = {}
